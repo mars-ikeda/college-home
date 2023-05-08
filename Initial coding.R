@@ -24,4 +24,17 @@ brown.df <- listings_RI.df |>
   select(id, neighbourhood, room_type, price, minimum_nights, availability_365)
 
 brown_wp.df <- brown.df |>
-  filter(neighbourhood == "West Providence")
+  filter(neighbourhood == "East Providence")
+
+harvard_sum.df <- harvard_ab.df |>
+  group_by(neighbourhood) |>
+  summarise(mean = mean(price),
+            median = median(price))
+  
+columbia_sum.df <- columbia_mh.df |>
+  summarise(mean = mean(price),
+            median = median(price))
+
+brown_sum.df <- brown_wp.df |>
+  summarise(mean = mean(price),
+            median = median(price))

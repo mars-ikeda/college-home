@@ -38,3 +38,10 @@ columbia_sum.df <- columbia_mh.df |>
 brown_sum.df <- brown_wp.df |>
   summarise(mean = mean(price),
             median = median(price))
+
+harvard_allston.df <- harvard_ab.df |>
+  filter(neighbourhood == "Allston")
+
+harvard_brighton.df <- harvard_ab.df |>
+  filter(neighbourhood == "Brighton")
+  

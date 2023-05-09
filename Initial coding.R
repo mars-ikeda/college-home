@@ -44,4 +44,35 @@ harvard_allston.df <- harvard_ab.df |>
 
 harvard_brighton.df <- harvard_ab.df |>
   filter(neighbourhood == "Brighton")
-  
+
+harvard_allston_pr.df <- harvard_allston.df |>
+  filter(room_type == "Private room")
+
+harvard_brighton_pr.df <- harvard_brighton.df |>
+  filter(room_type == "Private room")
+
+harvard_all_pr_summ.df <- harvard_allston_pr.df |>
+  summarise(mean = mean(price),
+            median = median(price))
+
+harvard_allston_eh.df <- harvard_allston.df |>
+  filter(room_type == "Entire home/apt")
+
+harvard_bri_eh.df <- harvard_brighton.df |>
+  filter(room_type == "Entire home/apt")
+
+brown_ep_eh.df <- brown_wp.df |>
+  filter(room_type == "Entire home/apt")
+
+brown_ep_pr.df <- brown_wp.df |>
+  filter(room_type == "Private room")
+
+columbia_mh_eh <- columbia_mh.df |>
+  filter (room_type == "Entire home/apt")
+
+columbia_mh_pr.df <- columbia_mh.df |>
+  filter (room_type == "Private room")
+
+harvard_allston_eh_summ.df <- harvard_allston_eh.df |>
+  summarise(mean = mean(price),
+            median = median(price))
